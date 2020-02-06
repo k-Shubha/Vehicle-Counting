@@ -30,5 +30,28 @@ There are a handful of ways to count vehicles on the road from manual counts to 
 -	It is relatively cheaper to implement and scale as a permanent vehicle counting system compared to other systems.
 -	It can track and count multiple vehicles moving in different directions across several lanes.
 
+## Method
+## Step1:Data Collection
+Before we proceed, first thing is to collect all types of vehicles on the road. Since I differentiated vehicles based of the capacity and the number of wheels, I made four classes:
+- Light Moving vehicles (Bike, cars, jeep)
+-	Medium vehicles (Small trucks)
+-	Heavy Moving vehicles (Bus, Truck)
+-	Heavy Moving Vehicles Multi axle (Bus truck)
+
+## Step2: Annotations
+Once we have all the images ready, place in a folder “image”. Now we need to label the images, so to do that we have many good tools available on internet but, I preferred [LabelImg](https://github.com/tzutalin/labelImg) as it is a graphical image annotation tool. It is written in Python and uses Qt for its graphical interface. Annotations are saved as XML files in PASCAL VOC format, the format used by ImageNet. Besides, it also supports YOLO format. Follow the method mentioned in link
+Make sure to save the annotations in the same folder where we have placed the images i.e., “image”.
+
+## Step 3: Build custom object detector model using YOLOv3
+Installing Darknet: I have used google colab to install darknet as there was some version problem while installing it on the machine. Here are the steps to setup darknet in [Google colab](https://github.com/k-Shubha/Vehicle-Counting/blob/master/darknet_custom_training.ipynb)
+
+
+## Step3: Split test and train
+I had planned to train the model in google colab,so before splitting the data into test and train.I will zip the images and annoations in my local machine and load it the colab.
+
+
+
+
+
 
 
