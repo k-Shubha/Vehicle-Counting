@@ -47,13 +47,18 @@ Installing Darknet: I have used google colab to install darknet as there was som
 
 Before runing the train command
 ### - Split data into test and train
-Zip the images and annoations in local machine and load it the colab.Move it to /content/darknet/build/darknet/x64/data/obj/ and run [split_train_test.py]
+Zip the images and annoations in local machine and load it the colab.Move it to /content/darknet/build/darknet/x64/data/obj/ and run [split_train_test.py](https://github.com/k-Shubha/Vehicle-Counting/blob/master/split_train_test.py)
 - Fllow the steps from [AlexeyAB](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects)
 
 ### - Calculate the anchors
 !./darknet detector calc_anchors "/content/darknet/build/darknet/x64/data/obj.data" -num_of_clusters 9 -width 416 -height 416
 
 ### Update the cfg file which was created before
+anchors in the cfg file for all the three anchors 
+- [1](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L782)
+- [2](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L609)
+- [3](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L695)
+
 
 ### Train the model
 !./darknet detector train "/content/darknet/build/darknet/x64/data/obj.data" "/content/darknet/build/darknet/x64/yolov3-obj.cfg" "/content/darknet/build/darknet/x64/darknet53.conv.74" -dont_show
@@ -63,7 +68,7 @@ Zip the images and annoations in local machine and load it the colab.Move it to 
 ### Test the model 
 !./darknet detector demo  "/content/darknet/build/darknet/x64/data/obj.data" "/content/darknet/build/darknet/x64/yolov3-obj.cfg" "/content/darknet/build/darknet/x64/backup/yolov3-obj_4000.weights" -dont_show "/content/drive/My Drive/test3.mp4" -out_filename "/content/result_final.mp4"
 
-# Tracking
+## Step4: Tracking
 
 
 
