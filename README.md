@@ -51,15 +51,17 @@ Before runing the train command
 - Zip the images and annoations in local machine and load it the colab.
 - Move it to /content/darknet/build/darknet/x64/data/obj/ and run [split_train_test.py](https://github.com/k-Shubha/Vehicle-Counting/blob/master/split_train_test.py)
 - Fllow the steps from [AlexeyAB](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects)
+- Make sure you have placed obj.data and obj.names file in correct location as mentioned by alexey
 
 #### 3.2 Calculate the anchors
 !./darknet detector calc_anchors "/content/darknet/build/darknet/x64/data/obj.data" -num_of_clusters 9 -width 416 -height 416
 
 #### 3.3 Update the cfg file which was created before
-anchors in the cfg file for all the three anchors 
+Update the anchors in the cfg file with your anchors in the following three locations on you local machine:
 - [Anchor1 in cfg file](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L782)
 - [Anchor2 in cfg file](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L609)
 - [Anchor3 in cfg file](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L695)
+- Upload the file to the colab and place in the correct location as mentioned by alexey
 
 
 #### 3.4 Train the model
