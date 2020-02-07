@@ -55,20 +55,27 @@ Zip the images and annoations in local machine and load it the colab.Move it to 
 
 ### Update the cfg file which was created before
 anchors in the cfg file for all the three anchors 
-- [1](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L782)
-- [2](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L609)
-- [3](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L695)
+- [Anchor1 in cfg file](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L782)
+- [Anchor2 in cfg file](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L609)
+- [Anchor3 in cfg file](https://github.com/k-Shubha/Vehicle-Counting/blob/9e12065162edaf7c39319957df76939f10f9610b/yolov3-obj.cfg#L695)
 
 
 ### Train the model
 !./darknet detector train "/content/darknet/build/darknet/x64/data/obj.data" "/content/darknet/build/darknet/x64/yolov3-obj.cfg" "/content/darknet/build/darknet/x64/darknet53.conv.74" -dont_show
 - Make sure to take a backup of darknet folder into drive for every 500 itrerations
 - To resume training copy the backed up file into the colab and train using above train command
+- After the loss is nearly equal to "0.0'some number'" or "0.'some number'" or if the avg loss doesnt change. Take the weights file from the backup folder in the darknet i.e., "/content/darknet/build/darknet/x64/backup/"
 
 ### Test the model 
 !./darknet detector demo  "/content/darknet/build/darknet/x64/data/obj.data" "/content/darknet/build/darknet/x64/yolov3-obj.cfg" "/content/darknet/build/darknet/x64/backup/yolov3-obj_4000.weights" -dont_show "/content/drive/My Drive/test3.mp4" -out_filename "/content/result_final.mp4"
 
 ## Step4: Tracking
+We will use YOLOv3 and SORT algorithms and will be implemented by pytorch.
+Follow the [link](https://github.com/k-Shubha/Vehicle_counting_in_video) to implement the tracking algorithm.
+Before moving further 
+- Make sure you have the weights file  and place it in the weights folder.
+- Change the config.py file and gui.py file accroding to your classes
+
 
 
 
