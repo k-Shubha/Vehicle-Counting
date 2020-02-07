@@ -48,7 +48,8 @@ Installing Darknet: I have used google colab to install darknet as there was som
 
 Before runing the train command
 ### - Split data into test and train
-Zip the images and annoations in local machine and load it the colab.Move it to /content/darknet/build/darknet/x64/data/obj/ and run [split_train_test.py](https://github.com/k-Shubha/Vehicle-Counting/blob/master/split_train_test.py)
+- Zip the images and annoations in local machine and load it the colab.
+- Move it to /content/darknet/build/darknet/x64/data/obj/ and run [split_train_test.py](https://github.com/k-Shubha/Vehicle-Counting/blob/master/split_train_test.py)
 - Fllow the steps from [AlexeyAB](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects)
 
 ### - Calculate the anchors
