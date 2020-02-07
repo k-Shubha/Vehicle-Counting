@@ -2,6 +2,7 @@
 Object detection is a technology related to computer vision and image processing that deals with detecting objects of a certain class in digital images and videos.
 Well-researched domains of object detection include face detection and pedestrian detection. Object detection has applications in many areas of computer vision, including image retrieval and video surveillance.
 In this article, will explain how I built vehicle counting system. Let's get started!
+![avatar](https://github.com/wsh122333/Multi-type_vehicles_flow_statistics/raw/master/asserts/demo3.gif)
 
 ## How vehicle counting system works?
 The vehicle counting system is made up of three main components: a detector, tracker and counter. 
@@ -75,6 +76,8 @@ Follow the [link](https://github.com/k-Shubha/Vehicle_counting_in_video) to impl
 Before moving further 
 - Make sure you have the weights file  and place it in the weights folder.
 - Change the config.py file and gui.py file accroding to your classes
+
+
 
 
 
